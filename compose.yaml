@@ -1,0 +1,19 @@
+services:
+  service1:
+    build:
+      context: .
+      dockerfile: ./apps/service1/Dockerfile
+    ports:
+      - '80:80'
+    volumes:
+      - ./apps/service1/src:/var/www/html/
+      - ./packages:/packages
+  service2:
+    build:
+      context: .
+      dockerfile: ./apps/service2/Dockerfile
+    ports:
+      - '8080:80'
+    volumes:
+      - ./apps/service2/src:/var/www/html/
+      - ./packages:/packages
